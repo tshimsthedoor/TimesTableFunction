@@ -43,8 +43,42 @@ namespace TimesTableFunction
         // the function to calculate tax
         static decimal CalculateTax(decimal amount, string twoLetterRegionCode)
         {
-            decimal ratea = 0.0M;
-            return ratea;
+            decimal rate = 0.0M;
+            switch (twoLetterRegionCode)
+            {
+                case "CH": // Switzerland
+                    rate = 0.08M;
+                    break;
+                case "DK": // Danmark
+                case "NO": // Norway
+                    rate = 0.25M;
+                    break;
+                case "GB": // United Kingdom
+                case "FR": // France
+                    rate = 0.2M;
+                    break;
+                case "HU": // Hungary
+                    rate = 0.27M;
+                    break;
+                case "OR": //Oregon
+                case "AK": // Alaska
+                case "MT": // Montana
+                    rate = 0.0M; 
+                    break;
+                case "ND": // North Dakota
+                case "WI": // Wisconsin
+                case "ME": // Maryland
+                case "VA": // Virginia
+                    rate = 0.05M;
+                    break;
+                case "CA": // California
+                    rate = 0.0825M;
+                    break;
+                default: // most US states
+                    rate = 0.06M;
+                    break;
+            }
+            return rate * amount;
         }
     }
 }
