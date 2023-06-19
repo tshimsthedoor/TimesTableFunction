@@ -39,5 +39,12 @@ namespace TimesTableFunction
             }
             WriteLine();
         }
+
+        // the function to calculate tax
+        static decimal CalculateTax(decimal amount, string twoLetterRegionCode)
+        {
+            decimal ratea = 0.0M;
+            return ratea;
+        }
     }
 }
