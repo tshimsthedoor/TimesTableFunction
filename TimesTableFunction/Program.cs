@@ -18,6 +18,11 @@ namespace TimesTableFunction
         static void TimesTable(byte number)
         {
             WriteLine($"This is the {number} times table:");
+            for (int row = 1; row <12; row++)
+            {
+                WriteLine($"{row} x {number} = {row * number}");
+            }
+            WriteLine();
         }
     }
 }
